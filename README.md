@@ -36,12 +36,17 @@ A minimalist task management app designed for desktop that helps you start your 
 ### 1. Clone and Install
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/task-tamer.git
+cd task-tamer
 npm install
 ```
 
 ### 2. Configure Supabase
 
-Create a `.env` file in the root directory:
+1. Create a free account at [Supabase](https://supabase.com)
+2. Create a new project
+3. Copy your project URL and anon key from Settings → API
+4. Create a `.env` file in the root directory:
 
 ```env
 VITE_SUPABASE_URL=your_supabase_project_url
@@ -230,12 +235,19 @@ src/
 
 ## Authentication
 
-The app uses Supabase Auth. For development, you can:
-1. Enable Email/Password authentication in Supabase dashboard
-2. Disable email confirmation for testing
-3. Create test users through the Supabase dashboard
+The app uses Supabase Auth with email/password authentication.
 
-For a production-ready auth flow, implement a login/signup page using Supabase Auth helpers.
+### Setup Steps:
+1. Go to your Supabase dashboard → Authentication → Providers
+2. Enable Email provider
+3. For development: Disable "Confirm email" under Authentication → Settings
+4. Create your first account through the app's signup page
+
+### Features:
+- Sign up with email and password
+- Secure authentication with Supabase
+- Automatic session management
+- Logout functionality
 
 ## License
 
