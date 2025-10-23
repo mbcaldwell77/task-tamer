@@ -147,7 +147,7 @@ export const Spin = () => {
               key="cards"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="grid grid-cols-3 gap-6 mb-8"
+              className="flex justify-center gap-6 mb-8 flex-wrap"
             >
               {selectedTasks.map((task, index) => (
                 <div key={task.id} className="w-[220px] h-[160px]">

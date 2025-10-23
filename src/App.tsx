@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
+import { Auth } from './pages/Auth';
 import { CheckIn } from './pages/CheckIn';
 import { Spin } from './pages/Spin';
 import { Focus } from './pages/Focus';
 
 const AppRoutes = () => {
-  const { loading } = useApp();
+  const { user, loading } = useApp();
 
   if (loading) {
     return (
@@ -13,6 +14,10 @@ const AppRoutes = () => {
         <div className="text-text-secondary text-xl">Loading...</div>
       </div>
     );
+  }
+
+  if (!user) {
+    return <Auth />;
   }
 
   return (

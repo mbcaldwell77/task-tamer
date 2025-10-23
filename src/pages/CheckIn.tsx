@@ -82,13 +82,17 @@ export const CheckIn = () => {
     day: 'numeric',
   });
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
+
   return (
     <div className="min-h-screen bg-bg-primary">
       {/* Header Bar */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="h-20 bg-bg-secondary flex items-center px-20"
+        className="h-20 bg-bg-secondary flex items-center px-20 justify-between"
         style={{
           background: 'linear-gradient(to bottom, #1E1E1E, #232323)',
           boxShadow: 'inset 0 -1px 0 rgba(0, 0, 0, 0.2)',
@@ -97,10 +101,18 @@ export const CheckIn = () => {
         <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-semibold">
           {userName.charAt(0).toUpperCase()}
         </div>
-        <h1 className="flex-1 text-center text-2xl font-semibold">
+        <h1 className="text-2xl font-semibold">
           Good morning, {userName}
         </h1>
-        <div className="text-sm text-text-secondary">{currentDate}</div>
+        <div className="flex items-center gap-4">
+          <div className="text-sm text-text-secondary">{currentDate}</div>
+          <button
+            onClick={handleLogout}
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Logout
+          </button>
+        </div>
       </motion.header>
 
       {/* Main Content */}
