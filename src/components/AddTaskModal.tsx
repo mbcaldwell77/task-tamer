@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TaskCategory, CATEGORIES } from '../types';
+import type { TaskCategory } from '../types';
+import { CATEGORIES } from '../types';
 import { useTasks } from '../hooks/useTasks';
 
 interface AddTaskModalProps {

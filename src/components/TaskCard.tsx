@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Task, CATEGORIES } from '../types';
+import type { Task } from '../types';
+import { CATEGORIES } from '../types';
 import { useNavigate } from 'react-router-dom';
 
 interface TaskCardProps {

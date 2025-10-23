@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Task, TaskCategory, CATEGORIES } from '../types';
+import type { Task, TaskCategory } from '../types';
+import { CATEGORIES } from '../types';
 import { AddTaskModal } from './AddTaskModal';
 
 interface TaskListProps {

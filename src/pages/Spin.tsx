@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { TaskCard } from '../components/TaskCard';
 import { EmptyState } from '../components/EmptyState';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { supabase, getTodayString } from '../lib/supabaseClient';
 
 export const Spin = () => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
-import { Task, TaskCategory } from '../types';
+import type { TaskCategory } from '../types';
 import { useApp } from '../context/AppContext';
 
 export const useTasks = () => {

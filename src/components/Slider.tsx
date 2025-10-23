@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 interface SliderProps {
   label: string;
@@ -11,8 +10,6 @@ interface SliderProps {
 }
 
 export const Slider = ({ label, min, max, value, onChange, minLabel, maxLabel }: SliderProps) => {
-  const [isDragging, setIsDragging] = useState(false);
-
   return (
     <div className="space-y-3">
       <label className="block text-lg font-semibold text-text-primary">{label}</label>
@@ -25,10 +22,6 @@ export const Slider = ({ label, min, max, value, onChange, minLabel, maxLabel }:
             max={max}
             value={value}
             onChange={(e) => onChange(parseInt(e.target.value))}
-            onMouseDown={() => setIsDragging(true)}
-            onMouseUp={() => setIsDragging(false)}
-            onTouchStart={() => setIsDragging(true)}
-            onTouchEnd={() => setIsDragging(false)}
             className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
             style={{
               background: `linear-gradient(to right, #888 0%, #888 ${((value - min) / (max - min)) * 100}%, #333 ${((value - min) / (max - min)) * 100}%, #333 100%)`,
