@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Inter:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    line-height: 1.4;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-150;
+  }
+
+  .btn-glow {
+    box-shadow: 0 0 12px rgba(119, 119, 119, 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 20px rgba(119, 119, 119, 0.5);
+  }
+
+  .card {
+    @apply bg-bg-card rounded-2xl p-8;
+  }
+
+  .input-field {
+    @apply bg-bg-primary border border-gray-700 rounded-lg px-4 py-2 text-text-primary;
+    @apply focus:outline-none focus:border-gray-600 transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
