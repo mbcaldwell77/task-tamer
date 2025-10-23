@@ -42,7 +42,7 @@ export const CheckIn = () => {
     if (!user) return;
 
     const today = getTodayString();
-    
+
     if (hasCheckedIn) {
       await supabase
         .from('daily_checkins')

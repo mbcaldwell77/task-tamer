@@ -5,9 +5,9 @@ import { useTasks } from '../hooks/useTasks';
 import { CATEGORIES } from '../types';
 
 export const CompletedTasks = () => {
-  const navigate = useNavigate();
-  const { tasks } = useApp();
-  const { deleteTask } = useTasks();
+    const navigate = useNavigate();
+    const { tasks } = useApp();
+    const { deleteTask } = useTasks();
 
     const completedTasks = tasks.filter((t) => t.completed);
     const today = new Date().toISOString().split('T')[0];
