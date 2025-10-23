@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { TaskCard } from '../components/TaskCard';
+import { EmptyState } from '../components/EmptyState';
 import { Task } from '../types';
 import { supabase, getTodayString } from '../lib/supabaseClient';
 
 export const Spin = () => {
+  const navigate = useNavigate();
   const { user, tasks } = useApp();
   const [spinning, setSpinning] = useState(true);
   const [selectedTasks, setSelectedTasks] = useState<Task[]>([]);
@@ -108,6 +111,23 @@ export const Spin = () => {
 
     performSpin();
   };
+
+  const incompleteTasks = tasks.filter((t) => !t.completed);
+
+  if (incompleteTasks.length === 0) {
+    return (
+      <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
+        <EmptyState
+          title="No tasks yet"
+          description="Add some tasks to get started with your daily spin."
+          action={{
+            label: 'Go to Check-In',
+            onClick: () => navigate('/'),
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
