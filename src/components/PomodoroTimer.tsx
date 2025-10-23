@@ -91,25 +91,22 @@ export const PomodoroTimer = ({ onComplete, categoryColor }: PomodoroTimerProps)
         <div className="flex gap-4">
           <button
             onClick={() => setDuration(15)}
-            className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-              duration === 15 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
-            }`}
+            className={`px-4 py-2 rounded-lg text-sm transition-colors ${duration === 15 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
+              }`}
           >
             15 min
           </button>
           <button
             onClick={() => setDuration(25)}
-            className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-              duration === 25 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
-            }`}
+            className={`px-4 py-2 rounded-lg text-sm transition-colors ${duration === 25 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
+              }`}
           >
             25 min
           </button>
           <button
             onClick={() => setDuration(45)}
-            className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-              duration === 45 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
-            }`}
+            className={`px-4 py-2 rounded-lg text-sm transition-colors ${duration === 45 ? 'bg-gray-600 text-white' : 'bg-gray-800 text-gray-400'
+              }`}
           >
             45 min
           </button>

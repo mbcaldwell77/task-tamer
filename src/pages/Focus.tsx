@@ -110,12 +110,27 @@ export const Focus = () => {
           />
         </motion.div>
 
+        {/* Cancel Session Button */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="mt-8 text-center"
+        >
+          <button
+            onClick={() => navigate('/spin')}
+            className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+          >
+            Cancel Session
+          </button>
+        </motion.div>
+
         {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-16 text-center space-y-2"
+          className="mt-8 text-center space-y-2"
         >
           <p className="text-text-secondary">
             Tasks done today: <span className="font-semibold">{tasksCompletedToday}</span>

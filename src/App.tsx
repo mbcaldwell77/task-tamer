@@ -4,6 +4,7 @@ import { Auth } from './pages/Auth';
 import { CheckIn } from './pages/CheckIn';
 import { Spin } from './pages/Spin';
 import { Focus } from './pages/Focus';
+import { CompletedTasks } from './pages/CompletedTasks';
 
 const AppRoutes = () => {
   const { user, loading } = useApp();
@@ -25,6 +26,7 @@ const AppRoutes = () => {
       <Route path="/" element={<CheckIn />} />
       <Route path="/spin" element={<Spin />} />
       <Route path="/focus/:taskId" element={<Focus />} />
+      <Route path="/completed" element={<CompletedTasks />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

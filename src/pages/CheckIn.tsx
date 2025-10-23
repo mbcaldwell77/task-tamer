@@ -107,6 +107,12 @@ export const CheckIn = () => {
         <div className="flex items-center gap-4">
           <div className="text-sm text-text-secondary">{currentDate}</div>
           <button
+            onClick={() => navigate('/completed')}
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Completed
+          </button>
+          <button
             onClick={handleLogout}
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
