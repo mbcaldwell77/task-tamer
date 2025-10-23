@@ -1,8 +1,8 @@
 -- Task Tamer Database Schema
 -- Run this in your Supabase SQL Editor
 
--- Enable Row Level Security
-ALTER TABLE auth.users ENABLE ROW LEVEL SECURITY;
+-- Note: auth.users is managed by Supabase and already has RLS enabled
+-- We only enable RLS on our own tables below
 
 -- Create daily_checkins table
 CREATE TABLE daily_checkins (
